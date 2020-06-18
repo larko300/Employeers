@@ -16,4 +16,21 @@ class EmployerController
             'user' => UsersAuthService::getUserByToken()
         ]);
     }
+
+    public function create()
+    {
+        try {
+            Employer::add($_POST);
+            $_SESSION['flesh'] = 'Success';
+            header('Location: /employers');
+            exit();
+        } catch (InvalidArgumentException $e) {
+            View::render('EmployersList', [
+                'employers' => Employer::findAll(),
+                'user' => UsersAuthService::getUserByToken(),
+                'error' => $e->getMessage()
+            ]);
+            exit();
+        }
+    }
 }

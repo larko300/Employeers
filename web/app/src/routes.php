@@ -5,6 +5,7 @@ $routes = [
     '/users/login' => ['App\Controller\UserController', 'login'],
     '/users/logout' => ['App\Controller\UserController', 'logout'],
     '/employers' => ['App\Controller\EmployerController', 'index'],
+    '/employers/create' => ['App\Controller\EmployerController', 'create'],
 ];
 
 $route = $_SERVER['REQUEST_URI'];
