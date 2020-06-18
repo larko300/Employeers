@@ -63,6 +63,7 @@
                     <th>Имя</th>
                     <th>Фамилия</th>
                     <th>Отчество</th>
+                    <th>Отдел</th>
                 </tr>
                 </thead>
                 <?php foreach ($data['employers'] as $employer): ?>
@@ -72,6 +73,7 @@
                     <td><?=  $employer->getFname() ?></td>
                     <td><?=  $employer->getSname() ?></td>
                     <td><?=  $employer->getPname() ?></td>
+                    <td><?=  $employer->getDepartmentId() ? $employer->getDepartment()->getName() : '' ?></td>
                     <td><form method="post" action="/employers/<?=  $employer->getId() ?>/destroy"><button type="submit" class="btn btn-danger">Delete</button></form></td>
                     <td><form method="post" action="/employers/<?=  $employer->getId() ?>/edit"><button type="submit" class="btn btn-primary">Edit</button></form></td>
                 </tr>

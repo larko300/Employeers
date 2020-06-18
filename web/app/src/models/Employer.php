@@ -14,6 +14,8 @@ class Employer extends ActiveRecordEntity
 
     protected $pname;
 
+    protected $departmentId;
+
     public function getFname(): string
     {
         return $this->fname;
@@ -42,6 +44,21 @@ class Employer extends ActiveRecordEntity
     public function setPname($pname): void
     {
         $this->pname = $pname;
+    }
+
+    public function getDepartmentId()
+    {
+        return $this->departmentId;
+    }
+
+    public function getDepartment(): Department
+    {
+        return Department::getById($this->departmentId);
+    }
+
+    public function setDepartment(Department $department): void
+    {
+        $this->departmentId = $department->getId();
     }
 
     public static function add($input){
