@@ -1,9 +1,6 @@
 # Application
-web/app/composer.json
-web/app/composer.lock
 web/app/vendor/
 web/app/doc/
-web/app/src/
 web/app/report/
 data/
 
