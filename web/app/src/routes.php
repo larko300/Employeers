@@ -4,6 +4,7 @@ $routes = [
     '/users/register' => ['App\Controller\UserController', 'singUp'],
     '/users/login' => ['App\Controller\UserController', 'login'],
     '/users/logout' => ['App\Controller\UserController', 'logout'],
+    '/employers' => ['App\Controller\EmployerController', 'index'],
 ];
 
 $route = $_SERVER['REQUEST_URI'];

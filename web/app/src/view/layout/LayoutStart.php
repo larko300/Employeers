@@ -19,7 +19,7 @@
         <div class="container">
             <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
                 <div class="container">
-                    <a class="navbar-brand" href="/">
+                    <a class="navbar-brand" href="/employers">
                         Project
                     </a>
                     <?php
@@ -27,7 +27,7 @@
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav ml-auto">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="/users/profile"><?= $data['user']->getName() ?></a>
+                                    <a class="nav-link" href="#"><?= $data['user']->getName() ?></a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="/users/logout">Logout</a>
