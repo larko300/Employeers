@@ -19,6 +19,12 @@ abstract class ActiveRecordEntity
         return $db->getAll(static::getTableName(), static::class);
     }
 
+    public static function findAllWhereLike($columns, $value)
+    {
+        $db = QueryBuilder::getInstance();
+        return $db->getAllWhereLike(static::getTableName(), $columns, $value, static::class);
+    }
+
     public static function getById(int $id)
     {
         $db = QueryBuilder::getInstance();

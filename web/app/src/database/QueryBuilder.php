@@ -37,6 +37,15 @@ class QueryBuilder
         return $statement->fetchAll(PDO::FETCH_CLASS, $className);
     }
 
+    public function getAllWhereLike($table, array $columns, string $value, string $className = 'stdClass')
+    {
+        $sql = "SELECT * FROM {$table} WHERE {$columns[0]} LIKE CONCAT('%', :value, '%') OR {$columns[1]} LIKE CONCAT('%', :value, '%') OR {$columns[2]} LIKE CONCAT('%', :value, '%')";
+        $statement = $this->pdo->prepare($sql);
+        $statement->bindValue(':value', $value);
+        $statement->execute();
+        return $statement->fetchAll(PDO::FETCH_CLASS, $className);
+    }
+
     public function create($table, $data)
     {
         $filteredData = array_filter($data);

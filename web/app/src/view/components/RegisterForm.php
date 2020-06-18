@@ -4,11 +4,7 @@
         <div class="card-body">
             <form method="POST" action="/users/register">
 
-                <?php if (!empty($data['error'])) : ?>
-                    <div class="alert alert-danger" role="alert">
-                        <?= $data['error'] ?>
-                    </div>
-                <?php endif; ?>
+                <?php include 'Errors.php'?>
 
                 <div class="form-group row">
                     <label for="name" class="col-md-4 col-form-label text-md-right">Name</label>

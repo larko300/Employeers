@@ -4,22 +4,9 @@
         <div class="card-body">
             <form method="POST" action="/users/login">
 
-                <?php if (!empty($data['error'])) : ?>
-                    <div class="alert alert-danger" role="alert">
-                        <?= $data['error'] ?>
-                    </div>
-                <?php endif; ?>
+                <?php include 'Errors.php'?>
 
-                <?php
-                if (!empty($_SESSION['flesh'])) :
-                ?>
-                    <div class="alert alert-success" role="alert">
-                        <?= $_SESSION['flesh'] ?>
-                    </div>
-                <?php
-                unset($_SESSION['flesh']);
-                endif;
-                ?>
+                <?php include 'Success.php'?>
 
                 <div class="form-group row">
                     <label for="email" class="col-md-4 col-form-label text-md-right">E-mail address or phone</label>
