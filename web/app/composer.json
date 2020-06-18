@@ -1,0 +1,26 @@
+{
+    "require": {
+
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "3.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\Acme\\": "src/",
+            "App\\Controller\\": "src/controllers",
+            "App\\View\\": "src/view",
+            "App\\Model\\": "src/models",
+            "App\\Db\\": "src/database",
+            "App\\Exceptions\\": "src/exceptions",
+            "App\\Services\\": "src/services"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "AppTest\\Acme\\": "test/"
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
